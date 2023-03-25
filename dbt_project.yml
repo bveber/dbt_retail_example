@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'sales'
+name: 'iowa_liquor_sales'
 version: '1.0.0'
 config-version: 2
 
@@ -38,13 +38,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  sales:
-    ml:
-      enabled: true
-      schema: ml
-      materialized: model
-      # post-hook: "{{ dbt_ml.model_audit() }}"
-    category:
+  iowa_liquor_sales:
+    staging:
       materialized: view
-    store:
+    intermediate:
+      ml:
+        enabled: true
+        schema: ml
+        materialized: model
+        # post-hook: "{{ dbt_ml.model_audit() }}"
+      category:
+        materialized: view
+      store:
+        materialized: view
+    marts:
       materialized: table

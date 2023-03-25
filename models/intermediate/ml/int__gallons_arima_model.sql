@@ -12,13 +12,19 @@
     )
 }}
 
+WITH model AS (
 
 SELECT
    store_number, 
    category, 
    sales_month, 
-   case when total_gallons is null then 0 else total_gallons end as total_gallons
+   CASE WHEN total_gallons IS NULL THEN 0 ELSE total_gallons END AS total_gallons
 FROM
-  {{ ref('monthly_category_sales_filled_missing_dates') }}
+  {{ ref('int__monthly_category_sales_filled_missing_dates') }}
 WHERE store_number='4004'
-and category is not null
+AND category IS NOT NULL
+
+)
+
+SELECT *
+FROM model
