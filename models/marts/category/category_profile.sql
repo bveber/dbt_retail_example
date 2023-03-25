@@ -7,4 +7,4 @@ FROM {{ ref('int__category_profile') }}
 
 SELECT * 
 FROM source_data
-WHERE category in not NULL
+WHERE category IS NOT NULL
