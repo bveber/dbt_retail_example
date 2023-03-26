@@ -16,7 +16,7 @@ SELECT distinct
     m AS sales_week
 FROM {{ ref('int__weekly_category_sales') }} s,
 UNNEST(
-    GENERATE_DATE_ARRAY((SELECT min_date FROM min_max_dates), (SELECT max_date FROM min_max_dates), INTERVAL 1 MONTH)
+    GENERATE_DATE_ARRAY((SELECT min_date FROM min_max_dates), (SELECT max_date FROM min_max_dates), INTERVAL 1 WEEK)
 ) m
 
 ),
