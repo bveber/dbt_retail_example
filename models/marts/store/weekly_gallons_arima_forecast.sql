@@ -16,7 +16,7 @@
 WITH source_data AS (
 
 SELECT *
-FROM {{ ref('int__gallons_arima_forecast') }}
+FROM {{ ref('int__weekly_gallons_arima_forecast') }}
 
 )
 
