@@ -3,7 +3,7 @@ version: 2
 models:
   - name: int__monthly_category_sales
     description: >
-      '{{ doc("sales_month") }}'ly sales for each store-category
+      Monthly sales for each store-category
     columns:
       - name: store_number
         description: '{{ doc("store_number") }}'
@@ -38,7 +38,7 @@ models:
 
   - name: int__monthly_category_sales_filled_missing_dates
     description: >
-      The monthly sales for each store-category
+      Monthly sales for each store-category
     columns:
       - name: store_number
         description: '{{ doc("store_number") }}'

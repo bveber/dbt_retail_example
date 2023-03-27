@@ -1,4 +1,7 @@
-Welcome to your new dbt project!
+This project uses DBT to define transformations required to perform forecasting on 
+the following BigQuery public dataset bigquery-public-data.iowa_liquor_sales.sales. The data 
+lists transactions between liquor stores and vendors and is updated monthly. More information can
+be found [here](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy)
 
 ### Using the starter project
 
