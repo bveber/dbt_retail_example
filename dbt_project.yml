@@ -43,7 +43,7 @@ models:
       materialized: view
     intermediate:
       ml:
-        enabled: true
+        enabled: false
         schema: ml
         materialized: model
         # post-hook: "{{ dbt_ml.model_audit() }}"
@@ -51,5 +51,17 @@ models:
         materialized: view
       store:
         materialized: view
+        monthly:
+          forecasting:
+            enabled: false
+        weekly:
+          enabled: false
     marts:
       materialized: table
+      store:
+        monthly:
+          forecasting:
+            enabled: false
+        weekly:
+          forecasting:
+            enabled: false
