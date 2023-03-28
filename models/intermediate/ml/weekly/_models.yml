@@ -1,12 +1,6 @@
 version: 2
 
 models:
-  - name: int__monthly_gallons_arima_model
-    description: >
-      The monthly ARIMA model for total gallons sold for each store-category
-  - name: int__monthly_sales_arima_model
-    description: >
-      The monthly ARIMA model for total sales in dollars for each store-category
   - name: int__weekly_gallons_arima_model
     description: >
       The weekly ARIMA model for total gallons sold for each store-category
