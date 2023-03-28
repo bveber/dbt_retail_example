@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int__category_profile
+  - name: int__category_profiles
     description: >
       A profile describing each category in the entire dataset
     columns:
@@ -32,7 +32,7 @@ models:
         description: '{{ doc("total_gallons") }}'
         data_type: float
 
-  - name: int__category_profile_by_month
+  - name: int__category_profiles_by_month
     description: >
       A profile describing each category by month
     columns:

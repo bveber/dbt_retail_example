@@ -40,4 +40,3 @@ models:
         description: '{{ doc("total_sales") }}'
       - name: total_gallons
         description: '{{ doc("total_gallons") }}'
-      

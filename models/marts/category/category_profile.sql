@@ -1,7 +1,7 @@
 WITH source_data as (
 
 SELECT * 
-FROM {{ ref('int__category_profile') }}
+FROM {{ ref('int__category_profiles') }}
 
 )
 

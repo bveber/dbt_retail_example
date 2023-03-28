@@ -29,7 +29,7 @@ The total number of purchases
 {% enddocs %}
 
 {% docs num_unique_items %}
-The number of unique items
+The number of unique items sold
 
 {% enddocs %}
 
@@ -60,5 +60,25 @@ The forecast
 
 {% docs standard_error %}
 The standard error
+
+{% enddocs %}
+
+{% docs num_months %}
+The number of unique months with sales
+
+{% enddocs %}
+
+{% docs min_date %}
+The earliest transaction date
+
+{% enddocs %}
+
+{% docs max_date %}
+The most recent transaction date
+
+{% enddocs %}
+
+{% docs num_unique_categories %}
+The number of unique categories sold
 
 {% enddocs %}
