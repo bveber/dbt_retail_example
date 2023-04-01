@@ -1,19 +1,14 @@
 import pandas as pd
-from darts.models.forecasting.prophet_model import Prophet
+from darts.models.forecasting.exponential_smoothing import ExponentialSmoothing
 from darts import TimeSeries
 from pyspark.sql.functions import unix_timestamp, col
 
 
 def fit_and_predict(df):
+    print(f"df shape: {df.shape}")
+    print(f"df dtypes: {df.dtypes}")
     ts = TimeSeries.from_dataframe(df, "sales_month", "total_gallons")
-    model = Prophet(
-        {
-            "name": "annual",  # (name of the seasonality component),
-            "seasonal_periods": 12,  # (nr of steps composing a season),
-            "fourier_order": 2,  # (number of Fourier components to use),
-        },
-        suppress_stdout_stderror=True,
-    )
+    model = ExponentialSmoothing()
     model.fit(ts)
     prediction = model.predict(6, num_samples=1000).median()
     preds_dict = {
@@ -25,7 +20,9 @@ def fit_and_predict(df):
     for i in range(len(prediction)):
         preds_dict["sales_month"].append(prediction.time_index.date[i])
         preds_dict["forecast"].append(prediction.values()[i][0])
+    print(f"preds_dict: {preds_dict}")
     output_df = pd.DataFrame(preds_dict)
+    print(f"output_df:\n{output_df}")
     return output_df
 
 
@@ -38,7 +35,7 @@ def model(dbt, session):
     my_sql_model_df = dbt.ref(
         "int__monthly_category_sales_filled_missing_dates_filtered"
     )
-    print(my_sql_model_df.count())
+    print(f"input df schema: {my_sql_model_df.schema}")
 
     final_df = (
         my_sql_model_df.withColumn(
@@ -48,9 +45,11 @@ def model(dbt, session):
         .groupBy(["store_number", "category"])
         .applyInPandas(
             fit_and_predict,
-            "store_number string, category string, forecast double, sales_month date",
+            "store_number string, category string, sales_month date, forecast double",
         )
     )
-    print(final_df.count())
+    print(f"output df columns: {final_df.columns}")
+    print(f"input df record count: {final_df.count()}")
+    print(f"output df schema: {final_df.schema}")
 
     return final_df
