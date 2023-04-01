@@ -38,7 +38,6 @@ def model(dbt, session):
     my_sql_model_df = dbt.ref(
         "int__monthly_category_sales_filled_missing_dates_filtered"
     )
-    print(my_sql_model_df.count())
 
     final_df = (
         my_sql_model_df.withColumn(
@@ -48,9 +47,8 @@ def model(dbt, session):
         .groupBy(["store_number", "category"])
         .applyInPandas(
             fit_and_predict,
-            "store_number string, category string, sales_month date, forecast double",
+            "store_number string, category string, forecast double, sales_month date",
         )
     )
-    print(final_df.count())
 
     return final_df
