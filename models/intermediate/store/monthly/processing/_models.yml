@@ -70,3 +70,6 @@ models:
       - name: total_liters
         description: '{{ doc("total_liters") }}'
         data_type: float
+
+models:
+  - name: int__monthly_category_sales_forecast
