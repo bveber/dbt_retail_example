@@ -82,3 +82,18 @@ The most recent transaction date
 The number of unique categories sold
 
 {% enddocs %}
+
+{% docs sales_forecast %}
+The forecast in dollars
+
+{% enddocs %}
+
+{% docs gallons_forecast %}
+The forecast in gallons
+
+{% enddocs %}
+
+{% docs forecast_generation_date %}
+The forecast generation date
+
+{% enddocs %}

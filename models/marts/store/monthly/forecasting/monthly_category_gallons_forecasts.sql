@@ -15,8 +15,10 @@
 
 WITH source_data AS (
 
-SELECT *
-FROM {{ ref('int__monthly_gallons_arima_forecasts') }}
+SELECT 
+  *,
+  DATE_TRUNC(CURRENT_DATE(), MONTH) AS forecast_generation_date
+FROM {{ ref('int__monthly_category_gallons_forecasts') }}
 
 )
 

@@ -58,9 +58,6 @@ models:
     marts:
       materialized: table
       store:
-        monthly:
-          forecasting:
-            enabled: false
         weekly:
           forecasting:
             enabled: false
