@@ -17,7 +17,13 @@ models:
       - name: category_name
         description: '{{ doc("category_name") }}'
         data_type: string
+<<<<<<< HEAD
 
+=======
+      - name: sales_month
+        description: '{{ doc("sales_month") }}'
+        data_type: date
+>>>>>>> b7b46d77738887a285bbc5dfe174182dd4c3fb57
       - name: num_purchases
         description: '{{ doc("num_purchases") }}'
         data_type: integer
@@ -34,10 +40,13 @@ models:
         description: '{{ doc("total_liters") }}'
         data_type: float
 
+<<<<<<< HEAD
       - name: sales_month
         description: '{{ doc("sales_month") }}'
         data_type: date
 
+=======
+>>>>>>> b7b46d77738887a285bbc5dfe174182dd4c3fb57
   - name: int__monthly_category_sales_filled_missing_dates
     description: >
       Monthly sales for each store-category
@@ -54,7 +63,13 @@ models:
       - name: category_name
         description: '{{ doc("category_name") }}'
         data_type: string
+<<<<<<< HEAD
 
+=======
+      - name: sales_month
+        description: '{{ doc("sales_month") }}'
+        data_type: date
+>>>>>>> b7b46d77738887a285bbc5dfe174182dd4c3fb57
       - name: num_purchases
         description: '{{ doc("num_purchases") }}'
         data_type: integer
@@ -71,6 +86,7 @@ models:
         description: '{{ doc("total_liters") }}'
         data_type: float
 
+<<<<<<< HEAD
       - name: sales_month
         description: '{{ doc("sales_month") }}'
         data_type: date
@@ -104,3 +120,7 @@ models:
 
       - name: sales_month
         description: '{{ doc("sales_month") }}'
+=======
+models:
+  - name: int__monthly_category_sales_forecast
+>>>>>>> b7b46d77738887a285bbc5dfe174182dd4c3fb57
