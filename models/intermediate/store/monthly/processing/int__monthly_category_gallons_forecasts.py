@@ -38,7 +38,6 @@ def model(dbt, session):
     my_sql_model_df = dbt.ref(
         "int__monthly_category_sales_filled_missing_dates_filtered"
     )
-    print(my_sql_model_df.count())
 
     final_df = (
         my_sql_model_df.withColumn(
@@ -51,6 +50,5 @@ def model(dbt, session):
             "store_number string, category string, forecast double, sales_month date",
         )
     )
-    print(final_df.count())
 
     return final_df
