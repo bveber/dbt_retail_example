@@ -6,7 +6,7 @@ SELECT
   COUNT(DISTINCT(DATE_TRUNC(date, MONTH))) AS num_months,
   MIN(date) AS min_date,
   MAX(date) AS max_date,
-  COUNT(DISTINCT(category)) AS num_unique_categrories, 
+  COUNT(DISTINCT(category)) AS num_unique_categories, 
   COUNT(DISTINCT(item_number)) AS num_unique_items, 
   SUM(sale_dollars) AS total_sales,
   SUM(volume_sold_gallons) AS total_gallons,

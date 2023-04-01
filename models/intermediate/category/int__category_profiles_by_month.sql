@@ -9,8 +9,8 @@ SELECT
   SUM(sale_dollars) AS total_sales,
   SUM(volume_sold_gallons) as total_gallons
 FROM {{ ref('stg__iowa_liquor_sales') }}
-GROUP BY category, sales_year, sales_month
-ORDER BY sales_year desc, sales_month desc, total_sales desc
+GROUP BY category, sales_month
+ORDER BY sales_month desc, total_sales desc
 
 )
 

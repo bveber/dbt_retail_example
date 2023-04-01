@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: monthly_category_gallons_forecasts
+    description: >
+      Monthly sales for each store-category
+    columns:
+      - name: store_number
+        description: '{{ doc("store_number") }}'
+      - name: category
+        description: '{{ doc("category") }}'
+      - name: sales_month
+        description: '{{ doc("sales_month") }}'
+      - name: forecast
+        description: '{{ doc("gallons_forecast") }}'
+      - name: forecast_generation_date
+        description: '{{ doc("forecast_generation_date") }}'
+
+  - name: monthly_category_sales_forecasts
+    description: >
+      Monthly sales for each store-category
+    columns:
+      - name: store_number
+        description: '{{ doc("store_number") }}'
+      - name: category
+        description: '{{ doc("category") }}'
+      - name: sales_month
+        description: '{{ doc("sales_month") }}'
+      - name: forecast
+        description: '{{ doc("sales_forecast") }}'
+      - name: forecast_generation_date
+        description: '{{ doc("forecast_generation_date") }}'
