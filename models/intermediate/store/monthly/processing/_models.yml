@@ -40,7 +40,8 @@ models:
 
   - name: int__monthly_category_sales_filled_missing_dates
     description: >
-      Monthly sales for each store-category
+      Monthly sales for each store-category with all missing each store-category
+      combinations in a monthly time-interval filled with zeros.
     columns:
       - name: store_number
         description: '{{ doc("store_number") }}'
