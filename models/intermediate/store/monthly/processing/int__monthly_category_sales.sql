@@ -10,7 +10,7 @@ SELECT
   COUNT(DISTINCT(item_number)) AS num_unique_items, 
   SUM(sale_dollars) AS total_sales,
   SUM(volume_sold_gallons) AS total_gallons,
-  SUM(volume_sold_liters) AS total_liters
+  SUM(volume_sold_liters) AS total_liters,
 
   DATE(EXTRACT(year FROM date), EXTRACT(month FROM date), 1)  as sales_month
 FROM {{ ref('stg__iowa_liquor_sales') }}

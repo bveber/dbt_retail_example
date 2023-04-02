@@ -50,9 +50,6 @@ models:
         materialized: view
       store:
         materialized: view
-        monthly:
-          forecasting:
-            enabled: false
         weekly:
           enabled: false
     marts:
