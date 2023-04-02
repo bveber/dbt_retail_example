@@ -40,7 +40,8 @@ models:
 
   - name: int__monthly_category_sales_filled_missing_dates
     description: >
-      Monthly sales for each store-category
+      Monthly sales for each store-category with all missing each store-category
+      combinations in a monthly time-interval filled with zeros.
     columns:
       - name: store_number
         description: '{{ doc("store_number") }}'
@@ -73,33 +74,3 @@ models:
       - name: sales_month
         description: '{{ doc("sales_month") }}'
         data_type: date
-
-  - name: int__monthly_category_gallons_forecasts
-    description: >
-      The monthly forecasts for total gallons for each category
-    columns:
-      - name: store_number
-        description: '{{ doc("store_number") }}'
-      - name: category
-        description: '{{ doc("category") }}'
-
-      - name: forecast
-        description: '{{ doc("gallons_forecast") }}'
-
-      - name: sales_month
-        description: '{{ doc("sales_month") }}'
-
-  - name: int__monthly_category_sales_forecasts
-    description: >
-      The monthly forecasts for total sales in dollars for each category
-    columns:
-      - name: store_number
-        description: '{{ doc("store_number") }}'
-      - name: category
-        description: '{{ doc("category") }}'
-
-      - name: forecast
-        description: '{{ doc("sales_forecast") }}'
-
-      - name: sales_month
-        description: '{{ doc("sales_month") }}'
